@@ -1,0 +1,51 @@
+.registerBody {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 600px;
+}
+
+.wholeLogo {
+    display: flex;
+    width: 250px;
+    position: relative;
+    right: 20px;
+}
+
+.saleIcon {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 0px;
+    top: 20px;
+    z-index: -1;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: xx-large;
+    color: rgb(26, 111, 203);
+    width: 300px;
+    position: relative;
+    right: 15px;
+    text-shadow: 1px 1px rgb(1, 74, 233);
+}
+
+.registerButton {
+    width: 90px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.oneField {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80px;
+}
+
+.inputField {
+    border-radius: 5px;
+    padding: 5px;
+}

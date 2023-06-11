@@ -1,0 +1,50 @@
+.topLeftBody {
+    height: 550px;
+    /* width: 350px; */
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    direction: rtl;
+}
+
+
+.bottomLeftBody {
+    max-width: 400px;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.totalLeft {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.753);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+
+.listButton {
+    width: 180px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 1px 2px 2px black;
+    background-color: rgb(248, 212, 167);
+}
+
+
+.listButton:hover {
+    background-color: rgb(250, 164, 58);
+}
+
+@media all and (max-width: 467px) {
+    .totalLeft {
+        width: 300px;
+    }
+}
+
+@media all and (max-width: 320px) {
+    .totalLeft {
+        width: 250px;
+    }
+}

@@ -1,0 +1,41 @@
+.itemPictureSmall {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.shortenedName {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.flex {
+    display: flex;
+    height: 200px;
+    width: 300px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    direction: ltr;
+}
+
+.filterButton {
+    width: 80px;
+    border-radius: 5px;
+}
+
+.filterButton:hover {
+    width: 80px;
+    border-radius: 5px;
+    background-color: rgb(217, 217, 217);
+}
+
+.selectField {
+    width: 200px;
+}
+
+.oneItem {
+    width: 150px;
+}
+

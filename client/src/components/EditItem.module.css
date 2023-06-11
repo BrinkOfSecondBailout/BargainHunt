@@ -1,0 +1,54 @@
+.uploadIcons {
+    display: flex;
+    max-width: 500px;
+    max-height: 150px;
+    justify-content: center;
+}
+
+.uploadIcon {
+    width: 150px;
+    height: 120px;
+}
+
+
+.listButton {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.body {
+    display: flex;
+    width: 95%;
+}
+
+.rightBody {
+    width: 80%;
+}
+
+.inputField {
+    border-radius: 5px;
+    padding: 5px;
+    width: 300px;
+}
+
+
+@media all and (max-width: 1000px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+    .SideBar {
+        display: none;
+    }
+}
+
+@media all and (max-width: 566px) {
+    .uploadIcon {
+        width: 100px;
+        height: 80px;
+    }
+        .inputField {
+            width: 100%;
+        }
+}

@@ -1,0 +1,147 @@
+.container {
+}
+
+
+.profilePic {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 1px 2px 2px 2px rgb(61, 61, 61);
+    padding: 3px;
+}
+
+.oneCorr {
+    display: flex;
+    width: 85%;
+    align-items: center;
+    border-top: 1px solid rgb(103, 103, 103);
+}
+
+.preview {
+    max-width: 300px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: black;
+    font-size: medium;
+}
+
+.logoAndName {
+    display: flex;
+    align-items: center;
+    /* max-width: 100% */
+}
+
+
+.logo {
+    /* width: 70px; */
+}
+
+.name {
+}
+
+.messagePreview {
+    max-width: 350px;
+}
+
+.body {
+    display: flex;
+    width: 95%;
+}
+
+.rightBody {
+    width: 80%;
+}
+
+.message {
+    width: 200px;
+}
+
+.messageTotal {
+    display: flex;
+    align-items: center;
+}
+
+.trashIcon {
+    width: 40px;
+    height: 40px;
+}
+.trashButton {
+    background-color: transparent;
+    border: none;
+}
+@media all and (max-width: 1000px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .messageTotal {
+        
+    }
+    .SideBar {
+        display: none;
+    }
+}
+
+@media all and (max-width: 671px) {
+    .rightBody {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .oneCorr {
+        display: flex;
+        width: 100%;
+        /* min-width: 400px; */
+    }
+    .messageTotal {
+        /* max-width: 80%; */
+        /* background-color: aquamarine; */
+    }
+    .name {
+        /* display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden; */
+    }
+    .logoAndName {
+    }
+    .message {
+        max-width: 250px;
+    }
+    .messagePreview {
+        max-width: 200px;
+        /* background-color: azure; */
+    }
+    .trash {
+        width: 50px;
+    }
+}
+
+@media all and (max-width: 541px) {
+    .oneCorr {
+        width: 100%;
+        /* background-color: rgba(0, 255, 255, 0.39); */
+    }
+
+    .logoAndName {
+        /* max-width: 300px; */
+    }
+    .messageTotal {
+        /* max-width: 100px; */
+    }
+    .message {
+        width: 100px;
+    }
+    .messagePreview {
+        width: 150px;
+    }
+    .preview {
+        width: 100%;
+        text-align: left;
+    }
+}

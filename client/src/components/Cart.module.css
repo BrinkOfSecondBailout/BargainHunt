@@ -1,0 +1,152 @@
+
+.itemPicture {
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+    
+}
+
+.itemDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
+.smallInput {
+    width: 40px;
+    height: 22px;
+    text-align: center;
+    font-size: medium;
+}
+
+.allCartItems {
+    max-height: 900px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.oneItem {
+    display: flex;
+    width: 90%;
+    padding: 5px;
+    border-top: 1px solid rgb(182, 182, 182);
+}
+
+.nameDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+}
+
+.quantityDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.totalDiv {
+    border-top: 1px solid rgb(182, 182, 182);
+    text-decoration: underline;
+    text-align: end;
+    max-width: 70%;
+    padding: 20px;
+}
+
+.checkoutDiv {
+    text-align: end;
+    max-width: 70%;
+}
+
+
+
+.quantityButton {
+    width: 40px;
+    height: 30px;
+    
+}
+
+.checkoutButton {
+    width: 120px;
+    height: 40px;
+    background-color: rgba(39, 113, 250, 0.817);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px black;
+    border: none;
+}
+
+.checkoutButton:hover {
+    background-color: rgba(1, 84, 238, 0.817);
+}
+
+.removeButton {
+    width: 80px;
+    height: 30px;
+    background-color: rgb(255, 44, 79);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px black;
+    border: none;
+}
+
+.removeButton:hover {
+    background-color: rgb(201, 9, 41);
+}
+
+.body {
+    display: flex;
+    width: 95%;
+}
+
+.rightBody {
+    width: 80%;
+}
+
+@media all and (max-width: 1000px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+    .SideBar {
+        display: none;
+    }
+    
+}
+
+@media all and (max-width: 700px) {
+    .quantityButton {
+        width: 30px;
+    }
+    .removeButton {
+        width: 70px;
+        height: 25px;
+    }
+    .smallInput {
+        width: 30px;
+    }
+    
+
+}
+
+@media all and (max-width: 594px) {
+    .itemPicture  {
+        width: 120px;
+        height: 120px;
+    }
+    .oneItem {
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+    }
+    .totalDiv {
+        text-align: center;
+    }
+    .checkoutDiv {
+        text-align: center;
+    }
+}

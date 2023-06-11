@@ -1,0 +1,190 @@
+.inboxIcon {
+    width: 40px;
+}
+
+.smallIcon {
+    width: 35px;
+}
+
+.navLinksSmall {
+    display: none;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: xx-large;
+    color: rgb(26, 111, 203);
+    width: 300px;
+    position: relative;
+    right: 15px;
+    text-shadow: 1px 1px rgb(1, 74, 233);
+}
+
+.saleIcon {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 0px;
+    top: 20px;
+    z-index: -1;
+}
+
+
+
+.wholeLogo {
+    display: flex;
+    width: 250px;
+    position: relative;
+    right: 20px;
+}
+
+.navLinks {
+    /* display: inline; */
+    /* max-height: 180px; */
+    text-align: right;
+    line-height: 0.7;
+}
+
+.twoTopIcons {
+    display: flex;
+    width: 180px;
+    position: relative;
+    right: 20px;
+    background: transparent;
+    background-color: rgba(255, 255, 255, 0.225);
+    border: 2px solid rgba(250, 250, 250, 0.614);
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.645);
+}
+
+.cartTotal {
+    position: relative;
+    bottom: 25px;
+    left: 20px;
+    background-color: red;
+    border-radius: 100%;
+    width: 30px;
+    height: 25px;
+    color: white;
+    box-shadow: 1px 2px 2px black;
+}
+
+.inboxTotal {
+    position: relative;
+    bottom: 25px;
+    left: 20px;
+    background-color: red;
+    border-radius: 100%;
+    width: 30px;
+    height: 25px;
+    color: white;
+    box-shadow: 1px 2px 2px black;
+}
+
+.totalCart {
+    height: 60px;
+    position: relative;
+    left: 5px;
+}
+
+.totalInbox {
+    height: 60px;
+    position: relative;
+    bottom: 2px;
+    right: 10px;
+}
+
+.topNav {
+    display: flex;
+    width: 90%;
+    height: 300px;
+}
+
+
+
+.topLeft {
+    /* flex: 1; */
+}
+
+.topRight {
+    display: grid;
+    /* position: relative;
+    top: 10%;
+    right: 12%; */
+    height: 100px;
+    flex: 3; 
+    justify-content: right;
+}
+
+.profilepic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 1px 2px 2px 2px rgb(61, 61, 61);
+    padding: 3px;
+}
+
+.cartPic {
+    width: 45px;
+    height: 40px;
+}
+
+
+.cartButton {
+    background: none;
+    border: none;
+    text-align: center;
+    font-size: 25px;
+    width: 80px;
+    height: 70px;
+}
+
+.inboxButton {
+    background: none;
+    border: none;
+    text-align: center;
+    font-size: 25px;
+    width: 80px;
+    height: 70px;
+}
+
+.cartButton:hover {
+    opacity: 60%;
+}
+
+.inboxButton:hover {
+    opacity: 60%;
+}
+
+@media all and (max-width: 932px) {
+
+    .topNav {
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+
+    }
+
+    .navLinksSmall {
+        display: flex;
+        margin-right: 30px;
+        padding: 5px;
+    }
+    .topLeft {
+    }
+    .topRight {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        left: 20px;
+    }
+    .twoTopIcons {
+    }
+
+    .navLinks {
+        display: none;
+    }
+}
+

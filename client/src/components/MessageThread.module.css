@@ -1,0 +1,137 @@
+
+.totalMessages {
+    /* width: 60%; */
+    max-height: 800px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    direction: ltr;
+}
+
+.leftMessage {
+    display: flex;
+    text-align: left;
+    max-width: 600px;
+}
+
+.rightEmpty {
+    width: 450px;
+}
+
+.leftEmpty {
+    width: 450px;
+}
+
+.rightMessage {
+    display: flex;
+    text-align: right;
+    max-width: 600px;
+    
+}
+
+.incoming {
+    background-color: #909090cc;
+    padding: 0.5em 0.5em;
+    font-size: 1.25em;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(78, 78, 78);
+}
+
+.outgoing {
+    background-color: #13a1ffcc;
+    padding: 0.5em 0.5em;
+    font-size: 1.25em;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+    color: rgb(0, 0, 0);
+    border: 1px solid rgba(42, 61, 207, 0.294);
+}
+
+.dateFont {
+    font-size: x-small;
+}
+
+.profilePic {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    box-shadow: 1px 2px 2px 2px rgb(61, 61, 61);
+    padding: 3px;
+}
+
+.messageBox {
+    width: 250px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 20px;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.replyBox {
+    width: 300px;
+}
+
+.replyButton {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.body {
+    display: flex;
+    width: 95%;
+}
+
+.rightBody {
+    width: 80%;
+}
+
+.sendButton {
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.sendMessage {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    right: 5px;
+    bottom: 5px;
+}
+
+.backArrow {
+    width: 20px;
+    height: 20px;
+}
+
+@media all and (max-width: 1200px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rightEmpty {
+        width: 300px;
+    }
+    
+    .leftEmpty {
+        width: 300px;
+    }
+    .SideBar {
+        display: none;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .rightEmpty {
+        width: 100px;
+    }
+    
+    .leftEmpty {
+        width: 100px;
+    }
+}
