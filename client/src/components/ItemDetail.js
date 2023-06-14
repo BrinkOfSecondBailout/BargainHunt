@@ -111,9 +111,9 @@ const ItemDetail = (props) => {
                     <h3>${item.price}</h3>
                     <h3>{item.condition}</h3>
                     <div className={Css.descriptionBox}>
-                        <h4>{item.description}</h4>
-                        <h4>Category: {item.category}</h4>
-                        <h4>Sold By: <Link to={`/users/${user?._id}`}>{user?.firstName}</Link></h4>
+                        <i><h4>{item.description}</h4></i>
+                        <h4><u>Category:</u> {item.category}</h4>
+                        <h4><u>Sold By:</u> <Link to={`/users/${user?._id}`}>{user?.firstName}</Link></h4>
                     </div>
                     <div>
                         { item.inventory >= 1 && item.userId !== userId ?
@@ -138,14 +138,14 @@ const ItemDetail = (props) => {
                             <img className={Css.itemPicture} src={item.myFile1}/>
                         : <img className={Css.itemPicture} src={noImg}/>
                     }
-                    {
+                    {/* {
                         item.myFile2 ? <img className={Css.itemPicture} src={item.myFile2} />
                         : null
                     }
                     {
                         item.myFile3 ? <img className={Css.itemPicture} src={item.myFile3} />
                         : null
-                    }
+                    } */}
                 </div>
             </div>
         </div>

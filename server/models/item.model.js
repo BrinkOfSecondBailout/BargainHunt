@@ -17,7 +17,7 @@ const ItemSchema = new mongoose.Schema({
     description: {
         type: String,
         minlength: [10, "Description must be least 10 characters"],
-        maxlength: [50, "Description must be below 50 characters"],
+        maxlength: [200, "Description must be below 200 characters"],
         required: [true, "Please type a description"]
     },
     inventory: {
@@ -42,17 +42,17 @@ const ItemSchema = new mongoose.Schema({
         type: String,
         required: false,
         default: ""
-    },
-    myFile2: {
-        type: String,
-        required: false,
-        default: ""
-    },
-    myFile3: {
-        type: String,
-        required: false,
-        default: ""
     }
+    // myFile2: {
+    //     type: String,
+    //     required: false,
+    //     default: ""
+    // },
+    // myFile3: {
+    //     type: String,
+    //     required: false,
+    //     default: ""
+    // }
 }, {timestamps: true})
 
 

@@ -10,6 +10,10 @@
     height: 120px;
 }
 
+.backArrow {
+    width: 20px;
+    height: 20px;
+}
 
 .listButton {
     width: 100px;

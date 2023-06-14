@@ -13,9 +13,9 @@ module.exports.newItem = async (request, response) => {
         category: request.body.category,
         userId: request.body.userId,
         user: request.body.user,
-        myFile1: request.body.myFile1,
-        myFile2: request.body.myFile2,
-        myFile3: request.body.myFile3
+        myFile1: request.body.myFile1
+        // myFile2: request.body.myFile2,
+        // myFile3: request.body.myFile3
     })
         .then(item => response.json(item))
         .catch(err => response.status(400).json(err))
