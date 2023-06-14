@@ -34,23 +34,29 @@ const Login = () => {
         <div>
             <div className={Css.loginBody}>
                 <div className={Css.wholeLogo}><img className={Css.saleIcon} src={saleIcon} /><h1 className={Css.logo}>BargainHunt</h1></div>
-                {errors ? <p>{errors}</p> : null}
-                <form onSubmit={loginUser} method="POST">
-                    <div className={Css.oneField}>
-                        <h4>Email:</h4>
-                        <div>
-                            <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} className={Css.inputField}/>
+                <div className={Css.loginBox}>
+                    {errors ? <p className={Css.red}>{errors}</p> : null}
+                    <form onSubmit={loginUser} method="POST">
+                        <div className={Css.oneField}>
+                            <u><h5>Demo Account:</h5></u>
+                            <p>sample@gmail.com</p>
+                            <p>sample123</p>
                         </div>
-                    </div>
-                    <div className={Css.oneField}>
-                        <h4>Password</h4>
-                        <div>
-                            <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} className={Css.inputField}/>
+                        <div className={Css.oneField}>
+                            <h4>Email:</h4>
+                            <div>
+                                <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} className={Css.inputField}/>
+                            </div>
                         </div>
-                    </div>
-                    <button className={Css.loginButton}><h4>Login</h4></button>
-                </form>
-
+                        <div className={Css.oneField}>
+                            <h4>Password</h4>
+                            <div>
+                                <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} className={Css.inputField}/>
+                            </div>
+                        </div>
+                        <button className={Css.loginButton}><h4>Login</h4></button>
+                    </form>
+                </div>
                 <Link to='/register'><h4>Register an account</h4></Link>
             </div>
         </div>

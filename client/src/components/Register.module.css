@@ -49,3 +49,14 @@
     border-radius: 5px;
     padding: 5px;
 }
+
+.loginBox {
+    border: 2px rgb(255, 255, 255) solid;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.red {
+    color: red;
+}
