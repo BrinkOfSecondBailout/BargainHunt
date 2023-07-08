@@ -40,6 +40,10 @@
     padding: 10px;
 }
 
+.red {
+    color: red;
+}
+
 @media all and (max-width: 1000px) {
     .body {
         display: flex;

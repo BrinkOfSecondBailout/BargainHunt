@@ -96,6 +96,26 @@ const ItemDetail = (props) => {
             })
     }
 
+    const getElapsedTime = () => {
+        const createdAt = new Date(item.createdAt);
+        const now = new Date();
+        const elapsedMilliseconds = now - createdAt;
+        const elapsedSeconds = Math.floor(elapsedMilliseconds/1000);
+        const elapsedMinutes = Math.floor(elapsedSeconds / 60);
+        const elapsedHours = Math.floor(elapsedMinutes / 60);
+        const elapsedDays = Math.floor(elapsedHours / 24);
+
+        if (elapsedDays > 0) {
+            return `${elapsedDays} day(s) ago`;
+        } else if (elapsedHours > 0) {
+            return `${elapsedHours} hour(s) ago`;
+        } else if (elapsedMinutes > 0) {
+            return `${elapsedMinutes} minute(s) ago`;
+        } else {
+            return 'Just now';
+        }
+    }
+
     return (
         <div>
             <div>
@@ -108,8 +128,9 @@ const ItemDetail = (props) => {
             
                 <div className={Css.rightBody}>
                     <h1>{item.name}</h1>
-                    <h3>${item.price}</h3>
+                    <h3 className={Css.red}><i>${item.price}</i></h3>
                     <h3>{item.condition}</h3>
+                    <h4><u>Posted: {getElapsedTime()}</u></h4>
                     <div className={Css.descriptionBox}>
                         <i><h4>{item.description}</h4></i>
                         <h4><u>Category:</u> {item.category}</h4>
@@ -138,14 +159,6 @@ const ItemDetail = (props) => {
                             <img className={Css.itemPicture} src={item.myFile1}/>
                         : <img className={Css.itemPicture} src={noImg}/>
                     }
-                    {/* {
-                        item.myFile2 ? <img className={Css.itemPicture} src={item.myFile2} />
-                        : null
-                    }
-                    {
-                        item.myFile3 ? <img className={Css.itemPicture} src={item.myFile3} />
-                        : null
-                    } */}
                 </div>
             </div>
         </div>
