@@ -45,6 +45,10 @@
     right: 50px;
 }
 
+.locationDivSmall {
+    display: none;
+}
+
 .wholeLogo {
     display: flex;
     width: 250px;
@@ -188,6 +192,11 @@
         display: flex;
         margin-right: 30px;
         padding: 5px;
+    }
+
+    .locationDivSmall {
+        display: block;
+        margin-bottom: -10px;
     }
     .topLeft {
     }

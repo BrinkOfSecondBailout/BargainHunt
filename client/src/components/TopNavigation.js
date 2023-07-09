@@ -23,6 +23,14 @@ const TopNavigation = (props) => {
                     : <Link to='/'><img className={Css.profilepic} src={avatar} alt="no-avatar"/></Link>
                 }
             </div>
+            <div className={Css.locationDivSmall}>
+                {
+                    user.location?
+                    <Link to='/users/edit'><img src={ping} className={Css.pingIcon}/><h6 className={Css.locationFont}>{user.location}</h6></Link>
+                    : <Link to='/users/edit'><img src={ping} className={Css.pingIcon}/><h6 className={Css.locationFont}>None set yet..</h6></Link>
+
+                }
+            </div>
             <div className={Css.topRight}>
                 <div className={Css.twoTopIcons}>
                     <div className={Css.totalCart}>
