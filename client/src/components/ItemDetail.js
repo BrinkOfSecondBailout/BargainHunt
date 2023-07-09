@@ -6,6 +6,7 @@ import TopNavigation from './TopNavigation';
 import noImg from '../assets/noimage.jpg';
 import SideBar from './SideBar';
 import ping from '../assets/ping.png';
+import calendar from '../assets/calendar.png';
 
 const ItemDetail = (props) => {
     const {myItems, inbox, user1, cart, removeFromDom} = props;
@@ -131,7 +132,12 @@ const ItemDetail = (props) => {
                     <h1>{item.name}</h1>
                     <h3 className={Css.red}><i>${item.price}</i></h3>
                     <h3>{item.condition}</h3>
-                    <h4><u>Posted: {getElapsedTime()}</u></h4>
+                    <img src={calendar} className={Css.calendarIcon}/>
+                    <div>
+                        <h4><u>Posted:</u></h4>
+                        <h4>{getElapsedTime()}</h4>
+                    </div>
+                    
                     <div className={Css.descriptionBox}>
                         <i><h4>{item.description}</h4></i>
                         <h4><u>Category:</u> {item.category}</h4>
