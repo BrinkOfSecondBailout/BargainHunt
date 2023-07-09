@@ -139,4 +139,12 @@
     .leftEmpty {
         width: 100px;
     }
+
+    .messageBox {
+        width: 180px;
+    }
+
+    .replyBox {
+        width: 200px;
+    }
 }
