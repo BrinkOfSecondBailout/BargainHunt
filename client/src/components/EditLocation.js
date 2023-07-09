@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
 import PlacesAutocomplete, {
     geocodeByAddress,
     geocodeByPlaceId,
@@ -10,6 +11,7 @@ import ping from '../assets/ping.png';
 
 const EditLocation = (props) => {
     const userId = localStorage.getItem('userId');
+    const navigate = useNavigate();
     const {location} = props;
     const [address, setAddress] = useState("")
     const [coordinates, setCoordinates] = useState({
@@ -34,6 +36,7 @@ const EditLocation = (props) => {
             })
                 .then(response => {
                     console.log(response);
+                    navigate('/')
                 })
                 .catch(err => {
                     const errorReponse = err.response.data.errors;
@@ -60,7 +63,7 @@ const EditLocation = (props) => {
                         placeholder: 'Search Places ...',
                         className: 'location-search-input',
                     })}
-                    value={location}
+                    placeHolder={location}
                     className={Css.inputField} />
                     <div className="autocomplete-dropdown-container">
                     {loading && <div>Loading...</div>}

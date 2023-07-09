@@ -32,13 +32,15 @@ const TopNavigation = (props) => {
                         <Link to={`/inbox/${user._id}`}><button className={Css.inboxButton}><img className={Css.inboxIcon} src={inboxIcon} alt='inbox'/><div className={Css.inboxTotal}><h6>{inbox.newMessageCount}</h6></div></button></Link>
                     </div>
                 </div>
-                <div className={Css.navLinks}>
+                <div className={Css.locationDiv}>
                     {
                         user.location?
                         <Link to='/users/edit'><img src={ping} className={Css.pingIcon}/><h6 className={Css.locationFont}>{user.location}</h6></Link>
                         : <Link to='/users/edit'><img src={ping} className={Css.pingIcon}/><h6 className={Css.locationFont}>None set yet..</h6></Link>
 
                     }
+                </div>
+                <div className={Css.navLinks}>
                     <Link to='/'><h4 className={Css.spaceOut}>home</h4></Link>
                     <Link to='/users/edit'><h4 className={Css.spaceOut}>edit profile</h4></Link>
                     <Link to='/favorites'><h4 className={Css.spaceOut}>watchlist</h4></Link>

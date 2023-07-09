@@ -5,6 +5,7 @@ import Css from '../components/ItemDetail.module.css'
 import TopNavigation from './TopNavigation';
 import noImg from '../assets/noimage.jpg';
 import SideBar from './SideBar';
+import ping from '../assets/ping.png';
 
 const ItemDetail = (props) => {
     const {myItems, inbox, user1, cart, removeFromDom} = props;
@@ -135,6 +136,13 @@ const ItemDetail = (props) => {
                         <i><h4>{item.description}</h4></i>
                         <h4><u>Category:</u> {item.category}</h4>
                         <h4><u>Sold By:</u> <Link to={`/users/${user?._id}`}>{user?.firstName}</Link></h4>
+                        <h4><u>Location:</u></h4>
+                        <img src={ping} className={Css.pingIcon}/> {
+                            user?.location? 
+                            <h5 className={Css.locationFont}>{user.location}</h5>
+                            : <h5 className={Css.locationFont}>N/A</h5>
+                        }
+
                     </div>
                     <div>
                         { item.inventory >= 1 && item.userId !== userId ?
