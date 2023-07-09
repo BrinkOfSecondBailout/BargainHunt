@@ -126,6 +126,11 @@
     }
 }
 
+@media all and (max-width: 933px) {
+    .body {
+        margin-top: 100px;
+    }
+}
 @media all and (max-width: 500px) {
     .rightEmpty {
         width: 100px;

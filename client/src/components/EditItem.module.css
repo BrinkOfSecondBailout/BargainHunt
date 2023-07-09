@@ -47,6 +47,12 @@
     }
 }
 
+@media all and (max-width: 933px) {
+    .body {
+        margin-top: 100px;
+    }
+}
+
 @media all and (max-width: 566px) {
     .uploadIcon {
         width: 100px;
