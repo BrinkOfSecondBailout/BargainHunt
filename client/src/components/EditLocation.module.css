@@ -1,0 +1,17 @@
+.updateButton {
+    margin-top: 10px;
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.inputField {
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px;
+}
+
+.pingIcon {
+    width: 32px;
+    padding: 5px;
+}

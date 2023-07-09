@@ -2,9 +2,10 @@ import React, {useState, useEffect} from 'react'
 import {Link, useNavigate} from 'react-router-dom';
 import avatar from '../assets/avatar.png';
 import axios from 'axios';
-import Css from './EditProfile.module.css'
+import Css from './EditProfile.module.css';
 import TopNavigation from './TopNavigation';
 import SideBar from './SideBar';
+import EditLocation from './EditLocation';
 
 const EditProfile = (props) => {
     const navigate = useNavigate();
@@ -18,6 +19,7 @@ const EditProfile = (props) => {
     const [firstName, setFirstName] = useState(user1.firstName);
     const [lastName, setLastName] = useState(user1.lastName);
     const [email, setEmail] = useState(user1.email);
+    const [location, setLocation] = useState(user1.location);
     const userId = localStorage.getItem('userId');
 
     useEffect(() => {
@@ -134,6 +136,7 @@ const EditProfile = (props) => {
                                 <button className={Css.updateButton}><h4>Update</h4></button>
                             </div>
                         </form>
+                    <EditLocation location={location}/>
                     </div>
                 </div>
             

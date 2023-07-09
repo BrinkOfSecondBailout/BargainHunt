@@ -95,3 +95,9 @@ module.exports.updateProfile = async (request, response) => {
         .then(updatedUser => response.json(updatedUser))
         .catch(err => response.status(400).json(err));
 }
+
+module.exports.updateLocation = async (request, response) => {
+    User.findOneAndUpdate({_id: request.params.id}, request.body, {new:true, runValidators: true})
+        .then(updatedUser => response.json(updatedUser))
+        .catch(err => response.status(400).json(err));
+}

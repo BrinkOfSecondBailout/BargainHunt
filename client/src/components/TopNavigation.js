@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import avatar from '../assets/avatar.png';
 import cartIcon from '../assets/cart.png';
 import Css from './TopNavigation.module.css'
+import ping from '../assets/ping.png';
 import saleIcon from '../assets/sale.png';
 import inboxIcon from '../assets/inbox.png';
 import homeIcon from '../assets/home.png';
@@ -32,6 +33,12 @@ const TopNavigation = (props) => {
                     </div>
                 </div>
                 <div className={Css.navLinks}>
+                    {
+                        user.location?
+                        <Link to='/users/edit'><img src={ping} className={Css.pingIcon}/><h6 className={Css.locationFont}>{user.location}</h6></Link>
+                        : <Link to='/users/edit'><img src={ping} className={Css.pingIcon}/><h6 className={Css.locationFont}>None set yet..</h6></Link>
+
+                    }
                     <Link to='/'><h4 className={Css.spaceOut}>home</h4></Link>
                     <Link to='/users/edit'><h4 className={Css.spaceOut}>edit profile</h4></Link>
                     <Link to='/favorites'><h4 className={Css.spaceOut}>watchlist</h4></Link>

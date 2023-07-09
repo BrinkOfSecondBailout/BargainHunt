@@ -7,6 +7,7 @@ import avatar from '../assets/avatar.png';
 import noImg from '../assets/noimage.jpg';
 import message from '../assets/message.png';
 import SideBar from './SideBar';
+import ping from '../assets/ping.png';
 
 const UserDetail = (props) => {
     const {myItems, inbox, user1, cart} = props;
@@ -52,6 +53,12 @@ const UserDetail = (props) => {
                     <div className={Css.messageTotal}>
                         <Link to={`/message/${user._id}`}><img className={Css.sendMessage} src={message} alt="send-message"/></Link>
                     </div>
+
+                    {
+                        user.location?
+                        <Link><img src={ping} className={Css.pingIcon}/><h5 className={Css.locationFont}>{user.location}</h5></Link>
+                        : <div><img src={ping} className={Css.pingIcon}/><h4 className={Css.locationFont}>None set yet..</h4></div>
+                    }
 
                     <h2>Listed Items</h2>
                     <div className={Css.flex}>

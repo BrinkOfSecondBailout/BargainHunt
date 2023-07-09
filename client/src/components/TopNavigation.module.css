@@ -29,7 +29,14 @@
     z-index: -1;
 }
 
+.pingIcon {
+    width: 32px;
+    padding: 5px;
+}
 
+.locationFont {
+    color: red;
+}
 
 .wholeLogo {
     display: flex;
