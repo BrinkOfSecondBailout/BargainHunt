@@ -130,7 +130,7 @@ const ItemDetail = (props) => {
             
                 <div className={Css.rightBody}>
                     <h1>{item.name}</h1>
-                    <h3 className={Css.red}><i>${item.price}</i></h3>
+                    <h3 className={Css.green}><i>${item.price}</i></h3>
                     <h3>{item.condition}</h3>
                     <img src={calendar} className={Css.calendarIcon}/>
                     <div>
