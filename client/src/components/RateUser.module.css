@@ -3,6 +3,12 @@
     width: 95%;
 }
 
+.smallFont {
+    font-size: 15px;
+    font-style: italic;
+    color: rgb(103, 103, 103);
+}
+
 .rightBody {
     width: 80%;
 }

@@ -13,11 +13,25 @@ const RateUser = (props) => {
     const [comment, setComment] = useState("");
     const [rating, setRating] = useState(0);
     const navigate = useNavigate();
+    const [rated, setRated] = useState(false);
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/users/' + id)
             .then(response => {
                 setUser(response.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [id])
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/api/users/rating/check/' + id + '/' + user1._id)
+            .then(response => {
+                if(response.data == true) {
+                    setRated(true)
+                    console.log(response.data)
+                }
             })
             .catch(err => {
                 console.log(err)
@@ -58,6 +72,13 @@ const RateUser = (props) => {
                             <div className={Css.red}>
                                 <h4>How was your experience with {user.firstName}?</h4>
                             </div>
+                            <div>
+                                {
+                                    rated ?
+                                        <h4 className={Css.smallFont}>Note: You have already rated {user.firstName} before, so this new review will replace the previous one</h4>
+                                    : null
+                                }
+                            </div>
                             <div className={Css.padding}>
                                 <textarea rows="6" className={Css.textArea} onChange={(e) => setComment(e.target.value)}/>
                             </div>
@@ -73,6 +94,8 @@ const RateUser = (props) => {
                             </div>
                         </form>
                     </div>
+
+                    
                 </div>
             </div>
         </div>

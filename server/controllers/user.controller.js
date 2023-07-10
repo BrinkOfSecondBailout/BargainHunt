@@ -71,20 +71,7 @@ module.exports.getOneUser = (request, response) => {
         .catch(err => response.json(err))
 }
 
-module.exports.findAverageRating = async (request, response) => {
-    try {
-        const user = await User.findOne({_id: request.params.id});
-        const ratings = user.raters;
-        let total = 0
-        for (let i = 0; i < ratings.length; i++) {
-            total += ratings[i].rating
-        }
-        const average = Math.ceil(total / ratings.length);
-        response.json(average)
-    } catch(err) {
-        response.json(err)
-    }
-}
+
 
 module.exports.updatePicture = async (request, response) => {
     User.findOneAndUpdate({_id: request.params.id}, request.body, {new:true})
@@ -117,12 +104,26 @@ module.exports.updateLocation = async (request, response) => {
         .catch(err => response.status(400).json(err));
 }
 
+module.exports.findAverageRating = async (request, response) => {
+    try {
+        const user = await User.findOne({_id: request.params.id});
+        const ratings = user.raters;
+        let total = 0
+        for (let i = 0; i < ratings.length; i++) {
+            total += ratings[i].rating
+        }
+        const average = Math.ceil(total / ratings.length);
+        response.json(average)
+    } catch(err) {
+        response.json(err)
+    }
+}
+
 module.exports.addRating = async (request, response) => {
     const id = request.params.id;
     try {
-        const user = await User.findOne({_id: id}).populate('raters')
+        const user = await User.findOne({_id: id})
         const raterIndex = user.raters.findIndex(rater => rater.raterId.toString() === request.body.raterId)
-        console.log(raterIndex)
         const raterId = request.body.raterId
         const rating = request.body.rating
         const comment = request.body.comment
@@ -135,6 +136,22 @@ module.exports.addRating = async (request, response) => {
             user.raters[raterIndex].rating = rating
             await user.save()
             response.json("Rating successfully updated")
+        }
+    } catch(err) {
+        response.json(err)
+    }
+}
+
+module.exports.checkIfRated = async (request, response) => {
+    const id = request.params.id;
+    const raterId = request.params.raterId;
+    try {
+        const user = await User.findOne({_id: id})
+        const raterIndex = user.raters.findIndex(rater => rater.raterId.toString() === raterId)
+        if (raterIndex === -1) {
+            response.json(false)
+        } else {
+            response.json(true)
         }
     } catch(err) {
         response.json(err)
