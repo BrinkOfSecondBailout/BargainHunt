@@ -32,8 +32,6 @@ const NewItem = (props) => {
             userId: user._id,
             user: user,
             myFile1: postImage1.myFile
-            // myFile2: postImage2.myFile,
-            // myFile3: postImage3.myFile
         }) .then (response => {
             setMyItems([...myItems, response.data])
             console.log(response.data)
@@ -50,18 +48,6 @@ const NewItem = (props) => {
         const base64 = await convertToBase64(file1);
         setPostImage1({myFile : base64})
     }
-
-    // const handleFileUpload2 = async (e) => {
-    //     const file2 = e.target.files[0];
-    //     const base64 = await convertToBase64(file2);
-    //     setPostImage2({myFile : base64})
-    // }
-
-    // const handleFileUpload3 = async (e) => {
-    //     const file3 = e.target.files[0];
-    //     const base64 = await convertToBase64(file3);
-    //     setPostImage3({myFile : base64})
-    // }
 
     const convertToBase64 = (file) => {
         return new Promise ((resolve, reject) => {

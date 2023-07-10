@@ -15,9 +15,102 @@
     padding: 3px;
 }
 
+.red {
+    color: red;
+}
+
+.padding {
+    padding: 10px;
+}
+
 .textArea {
     width: 200px;
     border-radius: 10px;
     padding: 10px;
-    height: 100px;
+}
+
+.updateButton {
+    margin-top: 10px;
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: bisque;
+    box-shadow: 1px 1px 1px black;
+}
+
+.submitButton {
+    margin-top: 20px;
+}
+
+.ratingForm {
+    padding: 10px;
+}
+
+.ratings {
+    display: flex;
+    width: 300px;
+    position: relative;
+    left: 150px;
+    top: 30px;
+    transform: translate(-50%, -50%) rotateY(180deg); 
+}
+
+.ratings input {
+    display: none;
+}
+
+.ratings label {
+    display: block;
+    cursor: pointer;
+    width: 50px;
+}
+
+.ratings label:before {
+    content: '\f005';
+    font-family: fontAwesome;
+    position: relative;
+    display: block;
+    font-size: 50px;
+    color: #101010;
+}
+
+.ratings label:after {
+    content: '\f005';
+    font-family: fontAwesome;
+    position: absolute;
+    display: block;
+    font-size: 50px;
+    color: #ebff0c;
+    top: 7%;
+    margin-left: 2px;
+    opacity: 0;
+    transition: .5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.ratings label:hover:after,
+.ratings label:hover~label:after,
+.ratings input:checked~label:after {
+    opacity: 1;
+}
+
+@media all and (max-width: 1000px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .SideBar {
+        display: none;
+    }
+
+    .flex {
+        max-height: 100%;
+    }
+}
+
+@media all and (max-width: 933px) {
+    .body {
+        margin-top: 100px;
+    }
 }
