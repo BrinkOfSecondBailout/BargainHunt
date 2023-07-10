@@ -35,7 +35,7 @@ const UserSchema = new mongoose.Schema({
         required: false
     },
     average: {
-        type: Number,
+        type: [Number],
         min: 1,
         max: 5,
         required: false

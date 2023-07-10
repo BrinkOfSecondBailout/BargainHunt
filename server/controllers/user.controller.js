@@ -101,3 +101,27 @@ module.exports.updateLocation = async (request, response) => {
         .then(updatedUser => response.json(updatedUser))
         .catch(err => response.status(400).json(err));
 }
+
+module.exports.addRating = async (request, response) => {
+    const id = request.params.id;
+    try {
+        const user = await User.findOne({_id: id})
+        const raterIndex = user.raters.findIndex(rater => rater.user._id.toString() === request.body.rater._id)
+        const rater = await User.findOne({_id: request.body.user._id})
+        const rating = request.body.rating
+        const comment = request.body.comment
+        if (raterIndex === -1) {
+            user.raters.push({rater: rater, rating: rating, comment: comment})
+            user.average.push(rating)
+            await user.save()
+            response.json("Rating successfully submitted")
+        } else {
+            user.raters[raterIndex].comment = comment
+            user.raters[raterIndex].rating = rating
+            await user.save()
+            response.json("Rating successfully updated")
+        }
+    } catch(err) {
+        response.json(err)
+    }
+}
