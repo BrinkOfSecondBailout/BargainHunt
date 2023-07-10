@@ -16,7 +16,6 @@ import EditItem from './components/EditItem';
 import Inbox from './components/Inbox';
 import NewMessage from './components/NewMessage';
 import MessageThread from './components/MessageThread';
-import GridLoader from "react-spinners/ClipLoader";
 
 function App() {
     const isLogged = window.localStorage.getItem('isLogged');
@@ -26,7 +25,6 @@ function App() {
     const [myItems, setMyItems] = useState([]);
     const [inbox, setInbox] = useState([]);
     const [cart, setCart] = useState({});
-    const [loading, setLoading] = useState(false);
 
 
     useEffect(() => {
