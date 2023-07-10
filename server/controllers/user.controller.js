@@ -71,6 +71,21 @@ module.exports.getOneUser = (request, response) => {
         .catch(err => response.json(err))
 }
 
+module.exports.findAverageRating = async (request, response) => {
+    try {
+        const user = await User.findOne({_id: request.params.id});
+        const ratings = user.raters;
+        let total = 0
+        for (let i = 0; i < ratings.length; i++) {
+            total += ratings[i].rating
+        }
+        const average = Math.ceil(total / ratings.length);
+        response.json(average)
+    } catch(err) {
+        response.json(err)
+    }
+}
+
 module.exports.updatePicture = async (request, response) => {
     User.findOneAndUpdate({_id: request.params.id}, request.body, {new:true})
         .then(updatedUser => response.json(updatedUser))

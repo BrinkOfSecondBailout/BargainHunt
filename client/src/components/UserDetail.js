@@ -12,12 +12,23 @@ import ping from '../assets/ping.png';
 const UserDetail = (props) => {
     const {myItems, inbox, user1, cart} = props;
     const [user, setUser] = useState({});
+    const [average, setAverage] = useState(0);
     const [items, setItems] = useState([]);
     const {id} = useParams();
     useEffect(() => {
         axios.get('http://localhost:8000/api/users/' + id)
             .then(response => {
                 setUser(response.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [id])
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/api/users/average/' + id)
+            .then(response => {
+                setAverage(response.data)
             })
             .catch(err => {
                 console.log(err)
@@ -50,6 +61,9 @@ const UserDetail = (props) => {
                         <img className={Css.profilePic} src={user.myFile} alt="avatar"/>
                         : <img className={Css.profilePic} src={avatar} alt="no-avatar"/>
                     }
+                    <div>
+                        <h4>{average}</h4>
+                    </div>
                     <div>
                         <Link to={`/users/rate/${user._id}`}><button className={Css.updateButton}><h4>Rate this user</h4></button></Link>
                     </div>
