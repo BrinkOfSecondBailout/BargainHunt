@@ -10,6 +10,9 @@ const RateUser = (props) => {
     const {myItems, inbox, user1, cart} = props;
     const [user, setUser] = useState({});
     const {id} = useParams();
+    const [comment, setComment] = useState("");
+    const [rating, setRating] = useState(0);
+
     useEffect(() => {
         axios.get('http://localhost:8000/api/users/' + id)
             .then(response => {
@@ -22,7 +25,9 @@ const RateUser = (props) => {
 
     const newRatingHandler = (e) => {
         e.preventDefault();
-
+        console.log(rating);
+        console.log(comment);
+        
     }
 
     return (
@@ -46,14 +51,14 @@ const RateUser = (props) => {
                                 <h4>How was your experience with {user.firstName}?</h4>
                             </div>
                             <div className={Css.padding}>
-                                <textarea rows="6" className={Css.textArea}/>
+                                <textarea rows="6" className={Css.textArea} onChange={(e) => setComment(e.target.value)}/>
                             </div>
                             <div className={Css.ratings}>
-                                <input type="radio" name="rating" id="star5" value="5"/><label name="rating" for="star5"/>
-                                <input type="radio" name="rating" id="star4" value="4"/><label name="rating" for="star4"/>
-                                <input type="radio" name="rating" id="star3" value="3"/><label name="rating" for="star3"/>
-                                <input type="radio" name="rating" id="star2" value="2"/><label name="rating" for="star2"/>
-                                <input type="radio" name="rating" id="star1" value="1"/><label name="rating" for="star1"/>
+                                <input type="radio" name="rating" id="star5" value="5" onClick={(e) => setRating(e.target.value)}/><label name="rating" for="star5"/>
+                                <input type="radio" name="rating" id="star4" value="4" onClick={(e) => setRating(e.target.value)}/><label name="rating" for="star4"/>
+                                <input type="radio" name="rating" id="star3" value="3" onClick={(e) => setRating(e.target.value)}/><label name="rating" for="star3"/>
+                                <input type="radio" name="rating" id="star2" value="2" onClick={(e) => setRating(e.target.value)}/><label name="rating" for="star2"/>
+                                <input type="radio" name="rating" id="star1" value="1" onClick={(e) => setRating(e.target.value)}/><label name="rating" for="star1"/>
                             </div>
                             <div className={Css.submitButton}>
                                 <button className={Css.updateButton}><h4>Submit</h4></button>
