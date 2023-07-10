@@ -26,7 +26,7 @@ const ItemSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        enum: ['electronics', 'collectibles', 'clothings', 'toys', 'furniture', 'others'],
+        enum: ['electronics', 'collectibles', 'clothings', 'toys', 'furniture', 'sports', 'others'],
         required: [true, "Please select a category"]
     },
     userId: {

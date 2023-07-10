@@ -48,6 +48,7 @@ const FilterItems = () => {
                     <option value="clothings">Clothings/Accessories</option>
                     <option value="toys">Toys/Games</option>
                     <option value="furniture">Furniture</option>
+                    <option value="sports">Sports</option>
                     <option value="others">Others/Misc</option>
                 </select>
                 <button className={Css.filterButton}><h4>Filter</h4></button>
@@ -69,7 +70,7 @@ const FilterItems = () => {
                                     { item.myFile1 ?
                                     <img className={Css.itemPictureSmall} src={item.myFile1} alt="item-pic"/>
                                     : <img className={Css.itemPictureSmall} src={noImg}/>
-                                }
+                                    }
                                 </div>
 
                                 </div>

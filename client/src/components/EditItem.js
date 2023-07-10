@@ -19,8 +19,6 @@ const EditItem = (props) => {
     const [inventory, setInventory] = useState("")
     const [category, setCategory] = useState("")
     const [postImage1, setPostImage1] = useState("")
-    // const [postImage2, setPostImage2] = useState("")
-    // const [postImage3, setPostImage3] = useState("")
     const [errors, setErrors] = useState([])
 
 
@@ -45,8 +43,6 @@ const EditItem = (props) => {
         setDescription(item.description || "");
         setInventory(item.inventory || "");
         setPostImage1({myFile: item.myFile1} || "");
-        // setPostImage2({myFile: item.myFile2} || "");
-        // setPostImage3({myFile: item.myFile3} || "");
     }, [item]);
 
 
@@ -56,17 +52,6 @@ const EditItem = (props) => {
         setPostImage1({myFile : base64})
     }
 
-    // const handleFileUpload2 = async (e) => {
-    //     const file2 = e.target.files[0];
-    //     const base64 = await convertToBase64(file2);
-    //     setPostImage2({myFile : base64})
-    // }
-
-    // const handleFileUpload3 = async (e) => {
-    //     const file3 = e.target.files[0];
-    //     const base64 = await convertToBase64(file3);
-    //     setPostImage3({myFile : base64})
-    // }
 
     const convertToBase64 = (file) => {
         return new Promise ((resolve, reject) => {
@@ -93,8 +78,6 @@ const EditItem = (props) => {
             userId: user._id,
             user: user,
             myFile1: postImage1.myFile
-            // myFile2: postImage2.myFile,
-            // myFile3: postImage3.myFile
         })
             .then(response => {
                 console.log(response)
@@ -163,6 +146,7 @@ const EditItem = (props) => {
                                 <option value="clothings">Clothings/Accessories</option>
                                 <option value="toys">Toys/Games</option>
                                 <option value="furniture">Furniture</option>
+                                <option value="sports">Sports</option>
                                 <option value="others">Others/Misc</option>
                             </select>
                         </div>

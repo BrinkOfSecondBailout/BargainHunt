@@ -34,6 +34,32 @@ const UserSchema = new mongoose.Schema({
         type: Object,
         required: false
     },
+    average: {
+        type: Number,
+        min: 1,
+        max: 5,
+        required: false
+    },
+    raters: [
+        {
+            rater: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "User",
+                required: true
+            },
+            rating: {
+                type: Number,
+                min: 1,
+                max: 5,
+                required: true
+            },
+            comment: {
+                type: String,
+                maxlength: [200, "Keep it below 200 characters"],
+                required: false
+            }
+        }
+    ],
     myFile: {
         type: String,
         required: false,

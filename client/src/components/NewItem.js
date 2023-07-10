@@ -130,6 +130,7 @@ const NewItem = (props) => {
                                 <option value="clothings">Clothings/Accessories</option>
                                 <option value="toys">Toys/Games</option>
                                 <option value="furniture">Furniture</option>
+                                <option value="sports">Sports</option>
                                 <option value="others">Others/Misc</option>
                             </select>
                         </div>
@@ -139,14 +140,6 @@ const NewItem = (props) => {
                                 <label htmlFor="file-upload1"><img className={Css.uploadIcon} src={postImage1.myFile || upload} alt="file-upload"/></label>
                                 <input  type="file" accept="image/*" name="myFile1" id="file-upload1" onChange={(e) => handleFileUpload1(e)}/>
                             </div>
-                            {/* <div>
-                                <label htmlFor="file-upload2"><img className={Css.uploadIcon} src={postImage2.myFile || upload} alt="file-upload"/></label>
-                                <input type="file" accept="image/*" name="myFile2" id="file-upload2" onChange={(e) => handleFileUpload2(e)}/>
-                            </div>
-                            <div>
-                                <label htmlFor="file-upload3"><img className={Css.uploadIcon} src={postImage3.myFile || upload} alt="file-upload"/></label>
-                                <input type="file" accept="image/*" name="myFile3" id="file-upload3" onChange={(e) => handleFileUpload3(e)}/>
-                            </div> */}
                         </div>
                         <div>
                             <button className={Css.listButton}><h4>List</h4></button>

@@ -16,6 +16,7 @@ import EditItem from './components/EditItem';
 import Inbox from './components/Inbox';
 import NewMessage from './components/NewMessage';
 import MessageThread from './components/MessageThread';
+import RateUser from './components/RateUser';
 
 function App() {
     const isLogged = window.localStorage.getItem('isLogged');
@@ -87,6 +88,7 @@ function App() {
                     <Route path="/register" element={<Register/>} />
                     <Route path="/users/edit" element={isLogged? <EditProfile myItems={myItems} inbox={inbox} user1={user} cart={cart}/> : <Login/>} />
                     <Route path="/users/:id" element={isLogged? <UserDetail myItems={myItems} inbox={inbox}  user1={user} cart={cart} /> : <Login/>} />
+                    <Route path="/users/rate/:id" element={isLogged? <RateUser myItems={myItems} inbox={inbox}  user1={user} cart={cart} /> : <Login/>} />
                     <Route path="/items/new" element={isLogged? <NewItem inbox={inbox}  user={user} cart={cart} myItems={myItems} setMyItems={setMyItems}/> : <Login/>} />
                     <Route path="/items/:id" element={isLogged? <ItemDetail myItems={myItems} inbox={inbox} user1={user} cart={cart} removeFromDom={removeFromDom} /> : <Login/>} />
                     <Route path="/items/edit/:id" element={isLogged? <EditItem myItems={myItems} inbox={inbox}  user={user} cart={cart} /> : <Login/>} />

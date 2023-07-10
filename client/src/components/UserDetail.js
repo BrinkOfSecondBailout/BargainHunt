@@ -50,6 +50,9 @@ const UserDetail = (props) => {
                         <img className={Css.profilePic} src={user.myFile} alt="avatar"/>
                         : <img className={Css.profilePic} src={avatar} alt="no-avatar"/>
                     }
+                    <div>
+                        <Link to={`/users/rate/${user._id}`}><button className={Css.updateButton}><h4>Rate this user</h4></button></Link>
+                    </div>
                     <div className={Css.messageTotal}>
                         <Link to={`/message/${user._id}`}><img className={Css.sendMessage} src={message} alt="send-message"/></Link>
                     </div>

@@ -1,0 +1,16 @@
+.body {
+    display: flex;
+    width: 95%;
+}
+
+.rightBody {
+    width: 80%;
+}
+
+.profilePic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 1px 2px 2px 2px rgb(61, 61, 61);
+    padding: 3px;
+}
