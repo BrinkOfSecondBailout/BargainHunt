@@ -105,14 +105,14 @@ module.exports.updateLocation = async (request, response) => {
 module.exports.addRating = async (request, response) => {
     const id = request.params.id;
     try {
-        const user = await User.findOne({_id: id})
-        const raterIndex = user.raters.findIndex(rater => rater.user._id.toString() === request.body.rater._id)
-        const rater = await User.findOne({_id: request.body.user._id})
+        const user = await User.findOne({_id: id}).populate('raters')
+        const raterIndex = user.raters.findIndex(rater => rater.raterId.toString() === request.body.raterId)
+        console.log(raterIndex)
+        const raterId = request.body.raterId
         const rating = request.body.rating
         const comment = request.body.comment
         if (raterIndex === -1) {
-            user.raters.push({rater: rater, rating: rating, comment: comment})
-            user.average.push(rating)
+            user.raters.push({raterId: raterId, rating: rating, comment: comment})
             await user.save()
             response.json("Rating successfully submitted")
         } else {

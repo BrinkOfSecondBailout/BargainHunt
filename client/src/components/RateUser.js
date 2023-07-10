@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useParams, Link} from 'react-router-dom';
+import {useParams, Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import TopNavigation from './TopNavigation';
 import SideBar from './SideBar';
@@ -12,6 +12,7 @@ const RateUser = (props) => {
     const {id} = useParams();
     const [comment, setComment] = useState("");
     const [rating, setRating] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/users/' + id)
@@ -25,9 +26,16 @@ const RateUser = (props) => {
 
     const newRatingHandler = (e) => {
         e.preventDefault();
-        console.log(rating);
-        console.log(comment);
-        
+        axios.post('http://localhost:8000/api/users/rating/' + id, {
+            raterId: user1._id,
+            rating: rating,
+            comment: comment
+        }). then(response => {
+            console.log(response.data)
+            navigate('/users/' + id)
+        }). catch(err => {
+            console.log(err.response.data.errors)
+        })
     }
 
     return (

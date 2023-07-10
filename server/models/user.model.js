@@ -34,17 +34,10 @@ const UserSchema = new mongoose.Schema({
         type: Object,
         required: false
     },
-    average: {
-        type: [Number],
-        min: 1,
-        max: 5,
-        required: false
-    },
     raters: [
         {
-            rater: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "User",
+            raterId: {
+                type: String,
                 required: true
             },
             rating: {
