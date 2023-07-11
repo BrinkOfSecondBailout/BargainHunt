@@ -1,0 +1,68 @@
+.body {
+    display: flex;
+    width: 95%;
+}
+
+.rightBody {
+    width: 80%;
+}
+
+.profilePic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 1px 2px 2px 2px rgb(61, 61, 61);
+    padding: 3px;
+}
+
+.profilePicSm {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 1px 2px 2px 2px rgb(61, 61, 61);
+    padding: 3px;
+}
+
+.oneRating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+}
+
+.nameAndLogo {
+    width: 200px;
+}
+.starsAndComment {
+    width: 300px;
+}
+
+.stars {
+    width: 240px;
+}
+.starsSm {
+    width: 120px;
+}
+
+@media all and (max-width: 1000px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .SideBar {
+        display: none;
+    }
+
+    .flex {
+        max-height: 100%;
+    }
+}
+
+@media all and (max-width: 933px) {
+    .body {
+        margin-top: 100px;
+    }
+}

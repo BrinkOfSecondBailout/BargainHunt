@@ -67,11 +67,11 @@ const UserDetail = (props) => {
                         : <img className={Css.profilePic} src={avatar} alt="no-avatar"/>
                     }
                     <div>
-                        { average == 5 ? <img src={fivestars} className={Css.stars}/> : null }
-                        { average == 4 ? <img src={fourstars} className={Css.stars}/> : null }
-                        { average == 3 ? <img src={threestars} className={Css.stars}/> : null }
-                        { average == 2 ? <img src={twostars} className={Css.stars}/> : null }
-                        { average == 1 ? <img src={onestar} className={Css.stars}/> : null }
+                        { average === 5 ? <img src={fivestars} className={Css.stars}/> : null }
+                        { average === 4 ? <img src={fourstars} className={Css.stars}/> : null }
+                        { average === 3 ? <img src={threestars} className={Css.stars}/> : null }
+                        { average === 2 ? <img src={twostars} className={Css.stars}/> : null }
+                        { average === 1 ? <img src={onestar} className={Css.stars}/> : null }
                     </div>
 
                     <div>
