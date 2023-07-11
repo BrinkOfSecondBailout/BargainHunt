@@ -36,12 +36,12 @@ const RateUser = (props) => {
             .catch(err => {
                 console.log(err)
             })
-    }, [id])
+    }, [user1])
 
     const newRatingHandler = (e) => {
         e.preventDefault();
         axios.post('http://localhost:8000/api/users/rating/' + id, {
-            raterId: user1._id,
+            rater: user1,
             rating: rating,
             comment: comment
         }). then(response => {

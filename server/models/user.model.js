@@ -36,8 +36,9 @@ const UserSchema = new mongoose.Schema({
     },
     raters: [
         {
-            raterId: {
-                type: String,
+            rater: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "User",
                 required: true
             },
             rating: {

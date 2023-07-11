@@ -34,8 +34,6 @@ const Inbox = (props) => {
     }, [])
 
     const deleteThread = async (userId, threadId) => {
-        // console.log(userId)
-        // console.log(threadId)
         axios.delete(`http://localhost:8000/api/inbox/delete/${userId}/${threadId}`)
             .then(response => {
                 console.log(response.data)

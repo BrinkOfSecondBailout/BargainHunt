@@ -76,12 +76,12 @@ const UserDetail = (props) => {
 
                     <div>
                         {
-                            user.raters.length != 0 ? <h5><u><a href={`/users/reviews/${user._id}`}>{user.raters?.length} review(s)</a></u></h5>
+                            user.raters?.length != 0 ? <h5><u><a href={`/users/reviews/${user._id}`}>{user.raters?.length} review(s)</a></u></h5>
                             : <h5>No reviews yet...</h5>
                         }
                     </div>
 
-                    <div>
+                    <div className={Css.marginBottom}>
                         <Link to={`/users/rate/${user._id}`}><button className={Css.updateButton}><h4>Rate this user</h4></button></Link>
                     </div>
                     <div className={Css.messageTotal}>

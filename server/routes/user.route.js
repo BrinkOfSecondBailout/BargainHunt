@@ -7,6 +7,7 @@ module.exports = function(app) {
     app.get('/api/users/average/:id', UserController.findAverageRating);
     app.get('/api/users/rating/check/:id/:raterId', UserController.checkIfRated);
     app.get('/api/users/:id', UserController.getOneUser);
+    app.get('/api/users/ratings/:id', UserController.getAllRatings);
     app.get('/api/users', UserController.getAllUsers);
     app.patch('/api/users/location/update/:id', UserController.updateLocation);
     app.patch('/api/users/profile/:id', UserController.updatePicture);

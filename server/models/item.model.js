@@ -43,16 +43,6 @@ const ItemSchema = new mongoose.Schema({
         required: false,
         default: ""
     }
-    // myFile2: {
-    //     type: String,
-    //     required: false,
-    //     default: ""
-    // },
-    // myFile3: {
-    //     type: String,
-    //     required: false,
-    //     default: ""
-    // }
 }, {timestamps: true})
 
 

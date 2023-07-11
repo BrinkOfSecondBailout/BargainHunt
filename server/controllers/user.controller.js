@@ -71,6 +71,11 @@ module.exports.getOneUser = (request, response) => {
         .catch(err => response.json(err))
 }
 
+module.exports.getAllRatings = (request, response) => {
+    User.findOne({_id: request.params.id}).populate('raters')
+        .then(user => response.json(user))
+        .catch(err => response.json(err))
+}
 
 
 module.exports.updatePicture = async (request, response) => {
@@ -122,13 +127,15 @@ module.exports.findAverageRating = async (request, response) => {
 module.exports.addRating = async (request, response) => {
     const id = request.params.id;
     try {
-        const user = await User.findOne({_id: id})
-        const raterIndex = user.raters.findIndex(rater => rater.raterId.toString() === request.body.raterId)
-        const raterId = request.body.raterId
+        const user = await User.findOne({_id: id}).populate('raters')
+        const rater = request.body.rater
         const rating = request.body.rating
         const comment = request.body.comment
+        const raterIndex = user.raters.findIndex(existingRater => existingRater.rater._id.toString() === rater._id.toString())
+        console.log(raterIndex)
         if (raterIndex === -1) {
-            user.raters.push({raterId: raterId, rating: rating, comment: comment})
+            user.raters.push({rater: rater, rating: rating, comment: comment})
+            console.log("test")
             await user.save()
             response.json("Rating successfully submitted")
         } else {
@@ -146,8 +153,8 @@ module.exports.checkIfRated = async (request, response) => {
     const id = request.params.id;
     const raterId = request.params.raterId;
     try {
-        const user = await User.findOne({_id: id})
-        const raterIndex = user.raters.findIndex(rater => rater.raterId.toString() === raterId)
+        const user = await User.findOne({_id: id}).populate('raters')
+        const raterIndex = user.raters.findIndex(rater => rater.rater._id.toString() === raterId.toString())
         if (raterIndex === -1) {
             response.json(false)
         } else {
