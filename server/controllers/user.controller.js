@@ -72,7 +72,7 @@ module.exports.getOneUser = (request, response) => {
 }
 
 module.exports.getAllRatings = (request, response) => {
-    User.findOne({_id: request.params.id}).populate('raters')
+    User.findOne({_id: request.params.id}).populate('raters.rater')
         .then(user => response.json(user))
         .catch(err => response.json(err))
 }
@@ -132,10 +132,8 @@ module.exports.addRating = async (request, response) => {
         const rating = request.body.rating
         const comment = request.body.comment
         const raterIndex = user.raters.findIndex(existingRater => existingRater.rater._id.toString() === rater._id.toString())
-        console.log(raterIndex)
         if (raterIndex === -1) {
             user.raters.push({rater: rater, rating: rating, comment: comment})
-            console.log("test")
             await user.save()
             response.json("Rating successfully submitted")
         } else {
