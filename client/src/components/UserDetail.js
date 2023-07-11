@@ -8,6 +8,11 @@ import noImg from '../assets/noimage.jpg';
 import message from '../assets/message.png';
 import SideBar from './SideBar';
 import ping from '../assets/ping.png';
+import fivestars from '../assets/5stars.png';
+import fourstars from '../assets/4stars.png';
+import threestars from '../assets/3stars.png';
+import twostars from '../assets/2stars.png';
+import onestar from '../assets/1star.png';
 
 const UserDetail = (props) => {
     const {myItems, inbox, user1, cart} = props;
@@ -62,7 +67,14 @@ const UserDetail = (props) => {
                         : <img className={Css.profilePic} src={avatar} alt="no-avatar"/>
                     }
                     <div>
-                        <h4>{average}</h4>
+                        { average == 5 ? <img src={fivestars} className={Css.stars}/> : null }
+                        { average == 4 ? <img src={fourstars} className={Css.stars}/> : null }
+                        { average == 3 ? <img src={threestars} className={Css.stars}/> : null }
+                        { average == 2 ? <img src={twostars} className={Css.stars}/> : null }
+                        { average == 1 ? <img src={onestar} className={Css.stars}/> : null }
+                    </div>
+                    <div>
+                        <a href={`/users/reviews/${user._id}`}>read reviews</a>
                     </div>
                     <div>
                         <Link to={`/users/rate/${user._id}`}><button className={Css.updateButton}><h4>Rate this user</h4></button></Link>

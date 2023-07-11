@@ -48,8 +48,9 @@ const UserSchema = new mongoose.Schema({
             },
             comment: {
                 type: String,
+                minlength: [10, "Must be at least 10 characters"],
                 maxlength: [200, "Keep it below 200 characters"],
-                required: false
+                required: true
             }
         }
     ],

@@ -60,6 +60,10 @@
     box-shadow: 1px 1px 1px black;
 }
 
+.stars {
+    width: 240px;
+}
+
 @media all and (max-width: 1000px) {
     .body {
         display: flex;
