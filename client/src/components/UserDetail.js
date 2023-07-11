@@ -73,9 +73,14 @@ const UserDetail = (props) => {
                         { average == 2 ? <img src={twostars} className={Css.stars}/> : null }
                         { average == 1 ? <img src={onestar} className={Css.stars}/> : null }
                     </div>
+
                     <div>
-                        <h5><u><a href={`/users/reviews/${user._id}`}>read reviews</a></u></h5>
+                        {
+                            user.raters.length != 0 ? <h5><u><a href={`/users/reviews/${user._id}`}>{user.raters?.length} review(s)</a></u></h5>
+                            : <h5>No reviews yet...</h5>
+                        }
                     </div>
+
                     <div>
                         <Link to={`/users/rate/${user._id}`}><button className={Css.updateButton}><h4>Rate this user</h4></button></Link>
                     </div>
