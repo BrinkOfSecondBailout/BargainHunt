@@ -91,6 +91,30 @@ const EditLocation = (props) => {
                 </div>
                 )}
             </PlacesAutocomplete>
+
+            <div className={Css.map}>
+            </div>
+
+            {
+                async function initMap() {
+                    const position = {coordinates}
+                    const {Map} = await google.maps.importLibrary("marker")
+
+                    map = new Map(document.getElementsByClassName("map"), {
+                        zoom: 5,
+                        center: position,
+                        mapId: "DEMO_MAP_ID",
+                    })
+
+                    const marker = new AdvancedMarkerElement({
+                        map: map,
+                        position: position,
+                        title: "Uluru",
+                    })
+                }
+
+                initMap();
+            }
         </div>
     )
 }
