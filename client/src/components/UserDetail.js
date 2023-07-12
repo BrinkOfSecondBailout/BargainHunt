@@ -87,12 +87,14 @@ const UserDetail = (props) => {
                     <div className={Css.messageTotal}>
                         <Link to={`/message/${user._id}`}><img className={Css.sendMessage} src={message} alt="send-message"/></Link>
                     </div>
-
-                    {
-                        user.location?
-                        <Link><img src={ping} className={Css.pingIcon}/><h5 className={Css.locationFont}>{user.location}</h5></Link>
-                        : <div><img src={ping} className={Css.pingIcon}/><h4 className={Css.locationFont}>None set yet..</h4></div>
-                    }
+                    
+                    <div>
+                        {
+                            user.location?
+                            <Link to={`/users/map/${user._id}`}><img src={ping} className={Css.pingIcon}/><h5 className={Css.locationFont}>{user.location}</h5></Link>
+                            : <div><img src={ping} className={Css.pingIcon}/><h4 className={Css.locationFont}>None set yet..</h4></div>
+                        }
+                    </div>
 
                     <h2>Listed Items</h2>
                     <div className={Css.flex}>

@@ -18,6 +18,7 @@ import NewMessage from './components/NewMessage';
 import MessageThread from './components/MessageThread';
 import RateUser from './components/RateUser';
 import UserReviews from './components/UserReviews';
+import ShowLocation from './components/ShowLocation';
 
 function App() {
     const isLogged = window.localStorage.getItem('isLogged');
@@ -89,6 +90,7 @@ function App() {
                     <Route path="/register" element={<Register/>} />
                     <Route path="/users/edit" element={isLogged? <EditProfile myItems={myItems} inbox={inbox} user1={user} cart={cart}/> : <Login/>} />
                     <Route path="/users/:id" element={isLogged? <UserDetail myItems={myItems} inbox={inbox}  user1={user} cart={cart} /> : <Login/>} />
+                    <Route path="/users/map/:id" element={isLogged? <ShowLocation myItems={myItems} inbox={inbox}  user1={user} cart={cart} /> : <Login/>} />
                     <Route path="/users/rate/:id" element={isLogged? <RateUser myItems={myItems} inbox={inbox}  user1={user} cart={cart} /> : <Login/>} />
                     <Route path="/users/reviews/:id" element={isLogged? <UserReviews myItems={myItems} inbox={inbox}  user1={user} cart={cart} /> : <Login/>} />
                     <Route path="/items/new" element={isLogged? <NewItem inbox={inbox}  user={user} cart={cart} myItems={myItems} setMyItems={setMyItems}/> : <Login/>} />

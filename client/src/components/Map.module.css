@@ -1,0 +1,14 @@
+.map {
+    margin-top: 10px;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px black;
+}
+
+@media all and (max-width: 400px) {
+    .map {
+        width: 200px;
+        height: 400px;
+    }
+}

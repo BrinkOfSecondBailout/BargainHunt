@@ -1,13 +1,16 @@
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import PlacesAutocomplete, {
     geocodeByAddress,
     geocodeByPlaceId,
     getLatLng,
 } from 'react-places-autocomplete';
+
+
 import Css from './EditLocation.module.css';
 import axios from 'axios';
 import ping from '../assets/ping.png';
+import Map from './Map';
 
 const EditLocation = (props) => {
     const userId = localStorage.getItem('userId');
@@ -18,6 +21,7 @@ const EditLocation = (props) => {
         lat: null,
         lng: null
     })
+
 
     const handleSelect = async value => {
         const results = await geocodeByAddress(value);
@@ -47,8 +51,10 @@ const EditLocation = (props) => {
         }
     }
 
+
     return (
         <div>
+            
             <img src={ping} className={Css.pingIcon}/>
             <h5>Location:</h5>
             <PlacesAutocomplete
@@ -91,30 +97,7 @@ const EditLocation = (props) => {
                 </div>
                 )}
             </PlacesAutocomplete>
-
-            <div className={Css.map}>
-            </div>
-
-            {
-                async function initMap() {
-                    const position = {coordinates}
-                    const {Map} = await google.maps.importLibrary("marker")
-
-                    map = new Map(document.getElementsByClassName("map"), {
-                        zoom: 5,
-                        center: position,
-                        mapId: "DEMO_MAP_ID",
-                    })
-
-                    const marker = new AdvancedMarkerElement({
-                        map: map,
-                        position: position,
-                        title: "Uluru",
-                    })
-                }
-
-                initMap();
-            }
+            <Map coordinates={coordinates}/>
         </div>
     )
 }

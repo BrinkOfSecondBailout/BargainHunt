@@ -143,9 +143,9 @@ const ItemDetail = (props) => {
                         <h4><u>Category:</u> {item.category}</h4>
                         <h4><u>Sold By:</u> <Link to={`/users/${user?._id}`}>{user?.firstName}</Link></h4>
                         <h4><u>Location:</u></h4>
-                        <img src={ping} className={Css.pingIcon}/> {
+                        <Link to={`/users/map/${user?._id}`}><img src={ping} className={Css.pingIcon}/></Link> {
                             user?.location? 
-                            <h5 className={Css.locationFont}>{user.location}</h5>
+                            <Link to={`/users/map/${user?._id}`}><h5 className={Css.locationFont}>{user.location}</h5></Link>
                             : <h5 className={Css.locationFont}>N/A</h5>
                         }
 
