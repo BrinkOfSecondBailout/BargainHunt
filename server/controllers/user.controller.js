@@ -134,12 +134,12 @@ module.exports.addRating = async (request, response) => {
         const raterIndex = user.raters.findIndex(existingRater => existingRater.rater._id.toString() === rater._id.toString())
         if (raterIndex === -1) {
             user.raters.push({rater: rater, rating: rating, comment: comment})
-            await user.save()
+            await user.saveWithoutHashing();
             response.json("Rating successfully submitted")
         } else {
             user.raters[raterIndex].comment = comment
             user.raters[raterIndex].rating = rating
-            await user.save()
+            await user.saveWithoutHashing();
             response.json("Rating successfully updated")
         }
     } catch(err) {

@@ -4,7 +4,7 @@ import Css from './Map.module.css';
 
 const Map = (props) => {
     const {coordinates} = props;
-    const {isLoaded} = useLoadScript({googleMapsApiKey: ""});
+    const {isLoaded} = useLoadScript({googleMapsApiKey: "AIzaSyChY5OMAgnpUDQG1CCgHqO0ez9s6p-kYU4"});
 
     return (
         <div>

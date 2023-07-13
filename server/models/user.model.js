@@ -68,10 +68,15 @@ UserSchema.pre("save", async function(next) {
     if (!this.skipPasswordHashing) {
         const salt = await bcrypt.genSalt(10);
         this.password = await bcrypt.hash(this.password, salt)
-
     }
     next();
 })
+
+UserSchema.methods.saveWithoutHashing = async function () {
+    const doc = this;
+    const options = { validateBeforeSave: true };
+    await doc.constructor.updateOne({ _id: doc._id }, doc.toObject(), options);
+};
 
 
 module.exports.User = mongoose.model('User', UserSchema);

@@ -89,7 +89,6 @@ module.exports.deleteItem = async (request, response) => {
     try {
         await Item.deleteOne({_id: itemId})
         await Watchlist.deleteMany({ 'items.item': itemId });
-        // await Cart.deleteMany({ 'items.item': itemId });
         await Cart.updateMany(
             { 'items.item': itemId },
             { $pull: { items: { item: itemId } }, $inc: { count: -1 } }
