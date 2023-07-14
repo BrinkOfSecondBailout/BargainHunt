@@ -54,12 +54,15 @@ const Watchlist = (props) => {
                                     <div>
                                         <h4><Link to={`/items/${item.item._id}`}>{item.item.name}</Link></h4>
                                         <h4>${item.item.price}</h4>
-                                        <button className={Css.removeButton} onClick={() => removeFromWatchlist(item.item._id)}><h5>Remove</h5></button>
+                                        
                                     </div>
                                     { item.item.myFile1 ?
                                         <Link to={`/items/${item.item._id}`}><img className={Css.itemPicture} src={item.item.myFile1} alt="item-pic"/></Link>
                                     : <Link to={`/items/${item.item._id}`}><img className={Css.itemPicture} src={noImg} alt="no-img"/></Link>
                                     }
+                                    <div>
+                                        <button className={Css.removeButton} onClick={() => removeFromWatchlist(item.item._id)}><h5>Remove</h5></button>
+                                    </div>
                                 </div>
                             )
                         }) 
